@@ -1,0 +1,167 @@
+/* You can add global styles to this file, and also import other style files */
+$black-color: #000
+$white-color: #ffffff
+$secondary-color: #00ff88
+$gray-color: #696969
+
+.flex-flow-column
+  flex-flow: column
+
+.wrapper
+  position: relative
+  min-height: 100%
+  background: $black-color
+  color: $white-color
+  .content
+    padding: 10px
+
+  .contact-me
+    position: fixed
+    width: 200px
+    height: 100px
+    background: rgba($black-color, 0.4)
+    right: 0px
+    bottom: 0px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-flow: column
+    z-index: 9
+    .title
+      font-weight: bold
+      margin-bottom: 0rem
+    .nav-custom
+      list-style: none
+      padding-inline-start: 8px
+      .nav-item-custom
+        display: inline-block
+        .nav-link-custom
+          color: $gray-color
+          position: relative
+          margin-left: 10px
+          margin-right: 10px
+          font-weight: bold
+          &:hover
+            color: $white-color
+
+  .main-sidebar
+    position: fixed
+    width: 100px
+    height: 100vh
+    background: rgba($black-color, 0.4)
+    right: 0px
+    display: flex
+    justify-content: center
+    align-items: center
+
+    &.is-visible
+      display: flex
+
+    &.is-disabled
+      display: none
+    .nav
+      .nav-item
+        .nav-link
+          color: $gray-color
+          position: relative
+          margin-left: 10px
+          margin-right: 10px
+          font-weight: bold
+          &:after
+            content: ""
+            position: absolute
+            width: 12px
+            height: 12px
+            left: -9px
+            top: 8px
+            transform: rotate(45deg)
+            transform-origin: 0 100%
+            background: $white-color
+          &:before
+            content: ""
+            position: absolute
+            width: 12px
+            height: 12px
+            left: -12px
+            top: 8px
+            transform: rotate(45deg)
+            transform-origin: 0 100%
+            background: rgba($gray-color, 0.8)
+
+          &:hover
+            color: $white-color
+            &:after
+              background: $white-color
+
+          &.active
+            color: $secondary-color !important
+            &:after
+              background: $secondary-color!important
+
+
+// Home Page Styles
+#home-content
+  width: 100%
+  min-height: calc(100vh - 20px)
+  .nav
+    .nav-item
+      .nav-link
+        color: $secondary-color
+        position: relative
+        margin-left: 10px
+        margin-right: 10px
+        text-decoration: underline
+  .title-content
+    flex-direction: column
+    .title
+      font-family: "Comic Sans MS", cursive, sans-serif
+      font-weight: bold
+      font-size: 3.2em
+      position: relative
+      &:after
+        content: ""
+        position: absolute
+        width: 15%
+        height: 15px
+        left: 0
+        bottom: -20px
+        background: $white-color
+
+  .profile-picture
+    max-width: 450px
+    max-height: calc(100vh - 20px)
+
+//Building Content Style
+#building-content
+  font-family: "Comic Sans MS", cursive, sans-serif
+  margin: 20px
+  img
+    width: 250px
+
+  .title
+    font-weight: bold
+    font-size: 3.2em
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+      width: 25%
+      height: 15px
+      left: 0
+      bottom: -20px
+      background: $white-color
+  .description
+    color: $gray-color
+
+@media screen and ( max-width: 768px )
+  #home-content
+    flex-flow: column
+    .title-content
+      margin: 10px
+      .title:after
+        width: 30%
+
+  #building-content
+    margin-bottom: 100px
+    .title
+      font-size: 2.2em
